@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>김수현 | 호기심 많은 물리학도</title>
-<meta name="description" content="김수현, 호기심 많은 물리학도의 소개 페이지입니다." />
+<meta name="description" content="김수현, 생물물리학과 DNA에 관심이 있는 물리학도 3학년의 포트폴리오입니다." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -12,39 +12,121 @@
 </head>
 <body>
   <div class="page">
-    <header class="hero">
-      <p class="hero__badge">Physics Student</p>
-      <h1 class="hero__name"><em>김수현</em></h1>
-      <p class="hero__tagline">호기심 많은 물리학도</p>
-      <div class="hero__line" aria-hidden="true"></div>
-    </header>
+    <div class="layout">
+      <aside class="profile" aria-label="프로필">
+        <div class="profile__inner">
+          <p class="hero__badge">Physics Student</p>
+          <h1 class="hero__name"><em>김수현</em></h1>
+          <p class="hero__tagline">호기심 많은 물리학도</p>
+          <div class="hero__line" aria-hidden="true"></div>
+          <ul class="profile__meta">
+            <li><span>전공</span><strong>물리학</strong></li>
+            <li><span>학년</span><strong>3학년</strong></li>
+            <li><span>관심</span><strong>생물물리학 · DNA</strong></li>
+          </ul>
+        </div>
+      </aside>
 
-    <main class="section" aria-labelledby="interests-title">
-      <h2 class="section__title" id="interests-title">INTERESTS</h2>
-      <ul class="cards">
-        <li class="card" style="--card-accent: var(--mint);">
-          <span class="card__icon" aria-hidden="true">✈️</span>
-          <h3 class="card__title">여행</h3>
-          <p class="card__text">새로운 도시를 걷고, 낯선 풍경 속에서 생각을 정리합니다.</p>
-        </li>
-        <li class="card" style="--card-accent: var(--lavender);">
-          <span class="card__icon" aria-hidden="true">🎮</span>
-          <h3 class="card__title">게임</h3>
-          <p class="card__text">규칙과 전략을 파고드는 재미, 가끔은 친구들과 함께.</p>
-        </li>
-        <li class="card" style="--card-accent: var(--peach);">
-          <span class="card__icon" aria-hidden="true">☕</span>
-          <h3 class="card__title">카페 탐방</h3>
-          <p class="card__text">조용한 자리를 찾아 커피 한 잔과 함께 책을 펼칩니다.</p>
-        </li>
-      </ul>
-    </main>
+      <main class="content">
+        <section class="section" aria-labelledby="about-title">
+          <h2 class="section__title" id="about-title">ABOUT</h2>
+          <p class="about__lead">물리학의 언어로 생명 현상을 이해하는 일을 좋아합니다.</p>
+          <p class="about__text">DNA의 구조와 움직임을 물리 법칙으로 설명하는 데 관심이 있습니다. 통계물리학에서 배운 확률적 사고를 생체분자 데이터에 적용하는 과정이 특히 흥미롭습니다.</p>
+          <p class="about__text">현재는 분자 구조 데이터를 Python으로 분석하고, 간단한 모델을 직접 시뮬레이션하며 공부하고 있습니다. 배운 내용을 기록으로 남기고, 누구에게나 쉽게 설명할 수 있는 연구자가 되고 싶습니다.</p>
+        </section>
+
+        <section class="section" aria-labelledby="interests-title">
+          <h2 class="section__title" id="interests-title">RESEARCH INTERESTS</h2>
+          <ul class="cards">
+            <li class="card" style="--card-accent: var(--mint);">
+              <span class="card__icon" aria-hidden="true">🧬</span>
+              <h3 class="card__title">생물물리학 · DNA</h3>
+              <p class="card__text">DNA의 구조와 역학을 물리 법칙으로 설명하는 연구에 관심이 있습니다.</p>
+            </li>
+            <li class="card" style="--card-accent: var(--lavender);">
+              <span class="card__icon" aria-hidden="true">🔬</span>
+              <h3 class="card__title">분자 동역학</h3>
+              <p class="card__text">단백질과 핵산의 움직임을 컴퓨터로 재현하는 계산 연구를 살펴보고 있습니다.</p>
+            </li>
+            <li class="card" style="--card-accent: var(--peach);">
+              <span class="card__icon" aria-hidden="true">📊</span>
+              <h3 class="card__title">통계물리와 생체 데이터</h3>
+              <p class="card__text">변동이 큰 생체 데이터에서 의미 있는 패턴을 찾는 일에 흥미가 있습니다.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="projects-title">
+          <h2 class="section__title" id="projects-title">PROJECTS</h2>
+          <ul class="projects">
+            <li class="project" style="--project-accent: var(--mint);">
+              <p class="project__period">2025.03 — 2025.06</p>
+              <h3 class="project__title">DNA 이중나선 구조 시각화</h3>
+              <p class="project__desc">PDB에서 내려받은 DNA 구조 데이터를 Python으로 파싱해 이중나선을 3D로 시각화했습니다.</p>
+              <ul class="tags" aria-label="사용 기술">
+                <li>Python</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+              </ul>
+            </li>
+            <li class="project" style="--project-accent: var(--lavender);">
+              <p class="project__period">2024.09 — 2024.12</p>
+              <h3 class="project__title">단일분자 실험 데이터 분석</h3>
+              <p class="project__desc">통계물리학에서 배운 분포 개념으로 실험 데이터의 변동성을 분석하고, 노이즈를 걸러내는 간단한 파이프라인을 만들었습니다.</p>
+              <ul class="tags" aria-label="사용 기술">
+                <li>Python</li>
+                <li>SciPy</li>
+                <li>통계 분석</li>
+              </ul>
+            </li>
+            <li class="project" style="--project-accent: var(--peach);">
+              <p class="project__period">2023 — 현재</p>
+              <h3 class="project__title">AIpython 학습 저장소</h3>
+              <p class="project__desc">Python 기초 문법과 미니 프로젝트 코드를 GitHub에 꾸준히 정리하고 있습니다.</p>
+              <ul class="tags" aria-label="사용 기술">
+                <li>Python</li>
+                <li>Git</li>
+              </ul>
+              <p class="project__link">
+                <a href="https://github.com/v2810724v-ship-it/AIpython" target="_blank" rel="noopener noreferrer">저장소 보기 ↗</a>
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="coursework-title">
+          <h2 class="section__title" id="coursework-title">COURSEWORK &amp; SKILLS</h2>
+          <div class="courses">
+            <article class="course">
+              <h3 class="course__title">양자역학</h3>
+              <p class="course__desc">파동함수로 미시 세계의 상태를 기술하고, 측정과 확률의 의미를 다룹니다. 분자 수준의 에너지 구조를 이해하는 기초가 됩니다.</p>
+            </article>
+            <article class="course">
+              <h3 class="course__title">통계물리학</h3>
+              <p class="course__desc">많은 입자의 집단적 거동을 확률과 엔트로피로 설명합니다. 변동이 큰 생체분자 데이터를 다루는 통계적 사고를 배웁니다.</p>
+            </article>
+          </div>
+
+          <div class="skills">
+            <h3 class="skills__title">TOOLS</h3>
+            <ul class="tags">
+              <li>Python</li>
+              <li>NumPy</li>
+              <li>Matplotlib</li>
+              <li>SciPy</li>
+              <li>LaTeX</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <section class="contact" aria-labelledby="contact-title">
       <h2 class="section__title" id="contact-title">CONTACT</h2>
       <div class="contact__box">
         <div class="contact__links">
-          <button class="icon-link" type="button" id="email-trigger">
+          <button class="icon-link" type="button" id="email-trigger" aria-label="이메일 주소 복사: tongkoro1yang@pusan.ac.kr">
             <span class="icon-link__circle" style="--icon-bg: var(--lavender);">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.51l-8 5-8-5V6h16ZM4 18V8.7l7.47 4.67a1 1 0 0 0 1.06 0L20 8.7V18H4Z"/>
@@ -53,6 +135,7 @@
             <span>Email</span>
             <span class="icon-link__tip" id="email-tip">tongkoro1yang@pusan.ac.kr</span>
           </button>
+          <span class="visually-hidden" id="copy-status" role="status" aria-live="polite"></span>
           <a class="icon-link" href="https://github.com/v2810724v-ship-it/AIpython" target="_blank" rel="noopener noreferrer" aria-label="GitHub 저장소 열기 (새 창): github.com/v2810724v-ship-it/AIpython">
             <span class="icon-link__circle" style="--icon-bg: var(--mint);">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
