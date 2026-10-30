@@ -1,0 +1,315 @@
+:root {
+  --bg-1: #eef4ff;
+  --bg-2: #f6eefc;
+  --bg-3: #eafaf3;
+  --ink: #2f3550;
+  --ink-soft: #5a6285;
+  --card: #ffffff;
+  --accent: #7c8cf8;
+  --accent-soft: #e8ebff;
+  --mint: #b8e8d8;
+  --peach: #ffd9c7;
+  --lavender: #ddd6ff;
+  --radius: 24px;
+  --shadow: 0 10px 30px rgba(94, 106, 163, 0.10);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 112.5%; /* 기본 18px: 모바일에서도 편하게 */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 4rem) clamp(1.1rem, 5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 5rem);
+  color: var(--ink);
+  font-family: "Noto Sans KR", "Gowun Dodum", -apple-system, BlinkMacSystemFont,
+    "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  background:
+    radial-gradient(circle at 12% 8%, var(--bg-2) 0%, transparent 45%),
+    radial-gradient(circle at 88% 0%, var(--bg-3) 0%, transparent 40%),
+    linear-gradient(160deg, var(--bg-1) 0%, #fdfbff 55%, #f3fbf8 100%);
+}
+
+.page {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 8vw, 5.5rem);
+}
+
+/* ── 상단: 이름과 한 줄 소개 ── */
+.hero {
+  text-align: center;
+  padding-top: clamp(1rem, 4vw, 2.5rem);
+}
+
+.hero__badge {
+  display: inline-block;
+  margin: 0 0 1.4rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--ink-soft);
+  font-family: "Gowun Dodum", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.hero__name {
+  margin: 0;
+  font-family: "Gowun Dodum", "Noto Sans KR", sans-serif;
+  font-size: clamp(2.5rem, 10vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.hero__name em {
+  font-style: normal;
+  background: linear-gradient(120deg, #8f9bfb 0%, #a9d8f5 50%, #a8e6cf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__tagline {
+  margin: 1rem auto 0;
+  max-width: 26ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 3.6vw, 1.3rem);
+  word-break: keep-all;
+}
+
+.hero__line {
+  width: 64px;
+  height: 4px;
+  margin: 2rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--lavender), var(--mint));
+}
+
+/* ── 중간: 관심사 카드 ── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section__title {
+  margin: 0;
+  font-family: "Gowun Dodum", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.card {
+  position: relative;
+  padding: clamp(1.6rem, 4vw, 2.2rem) clamp(1.3rem, 4vw, 1.8rem);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: var(--card-accent, var(--lavender));
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(94, 106, 163, 0.16);
+}
+
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  margin-bottom: 0.9rem;
+  border-radius: 50%;
+  background: var(--card-accent, var(--lavender));
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.card__title {
+  margin: 0 0 0.4rem;
+  font-family: "Gowun Dodum", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.card__text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* ── 하단: 연락처 ── */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.contact__box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(1.8rem, 5vw, 2.6rem) clamp(1.5rem, 6vw, 3.2rem);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.4rem, 6vw, 2.4rem);
+}
+
+.icon-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem;
+  border: 0;
+  border-radius: 18px;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon-link__circle {
+  display: grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  background: var(--icon-bg, var(--accent-soft));
+  color: var(--ink);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.icon-link:hover .icon-link__circle,
+.icon-link:focus-visible .icon-link__circle {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(94, 106, 163, 0.18);
+}
+
+.icon-link svg {
+  width: 1.9rem;
+  height: 1.9rem;
+  fill: currentColor;
+}
+
+.icon-link__tip {
+  position: absolute;
+  bottom: calc(100% + 0.35rem);
+  left: 50%;
+  z-index: 5;
+  padding: 0.45rem 0.85rem;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #fff;
+  font-size: clamp(0.72rem, 3.3vw, 0.85rem);
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(47, 53, 80, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.icon-link__tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-top-color: var(--ink);
+}
+
+.icon-link:hover .icon-link__tip,
+.icon-link:focus-visible .icon-link__tip,
+.icon-link.is-open .icon-link__tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ── 작은 화면 보정 ── */
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
